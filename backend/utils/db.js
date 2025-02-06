@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
 
 const databaseConnection = () => {
-    mongoose.connect(`mongodb+srv://ashishkumar:ashish123@jobkhojocluster0.2bhwv.mongodb.net/?retryWrites=true&w=majority&appName=jobKhojoCluster0`)
-    .then((data) => {
+    mongoose.connect(process.env.MONGO_URI).then((data) => {
         console.log(`Database Connected`);
     }).catch((err) => {
-        console.log(`failed to Connect Database : ${err}`);
+        console.log(`failed to Connect Database`);
     })
 }
 

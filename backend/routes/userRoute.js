@@ -1,5 +1,4 @@
 import express from "express";
-import { User } from "../model/user.model.js"
 import { verifyJwt } from "../config/jwtVerify.js";
 import { registerUser, login, logout, updateProfile } from "../controller/user.Controller.js";
 import multer from "multer";
@@ -22,12 +21,6 @@ routes.post('/login', login);
 routes.get('/logout', logout);
 routes.post('/profile/update', verifyJwt, upload.single('resume'), updateProfile)
 
-routes.get("/check", (req, res) => {
-    res.send({
-        activeStatus: true,
-        error: false
-    })
-})
 
 
 export default routes;

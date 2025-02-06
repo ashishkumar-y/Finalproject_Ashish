@@ -4,9 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import databaseConnection from "./utils/db.js";
 import "./config/passport.js";
-
 dotenv.config();
-
 
 
 // Import routes
@@ -27,14 +25,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-
-// Test route
-app.get("/test", (req, res) => {
-    res.send("Hello, this is a test page");
-});
-
-
-
 // API routes
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/company", companyRoutes);
@@ -49,7 +39,6 @@ app.get("/", (req, res) => {
 })
 
 
-
 // Start the server
 const PORT = 8000 || 3016;
 app.listen(PORT, async (err) => {
@@ -60,3 +49,6 @@ app.listen(PORT, async (err) => {
         console.log(`Server started at: http://localhost:${PORT}`);
     }
 });
+
+
+export default app;
