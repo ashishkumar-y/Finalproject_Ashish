@@ -1,0 +1,68 @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+
+ html,
+ body {
+   color: white;
+   padding: 0;
+   margin: 0;
+   background-color: #2d2d2d;
+   scroll-behavior: smooth;
+ }
+
+ .main-background-color {
+   background-color: #2d2d2d;
+ }
+
+
+
+ /* Ensure no global styles are interfering */
+ FileInput {
+   pointer-events: auto !important;
+   display: block !important;
+ }
+
+ :root {
+   --primary: #dc0000;
+ }
+
+ .icon-color{
+  stroke: var(--primary) !important;
+ }
+
+ .primary-color {
+   color: var(--primary) !important;
+ }
+
+ .primary-bg {
+   background-color: var(--primary) !important;
+ }
+
+ .primary-bg:hover {
+   filter: brightness(80%)
+ }
+
+ .primary-border {
+   border: 2px solid var(--primary)
+ }
+
+
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar {
+   width: 5px;
+ }
+
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: var(--primary);
+   /* Blue color */
+   border-radius: 10px;
+ }
+
+
+
+ .hide-scrollbar::-webkit-scrollbar {
+   display: none;
+ }
