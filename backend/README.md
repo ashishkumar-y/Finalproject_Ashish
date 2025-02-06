@@ -13,12 +13,6 @@ Job Khojo is a job search platform that connects job seekers with employers. Thi
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository
-
-```sh
-git clone <your-github-repo-url>
-cd backend
-```
 
 ### 2️⃣ Install Dependencies
 

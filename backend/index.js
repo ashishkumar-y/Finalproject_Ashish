@@ -5,8 +5,9 @@ import dotenv from "dotenv";
 import databaseConnection from "./utils/db.js";
 import "./config/passport.js";
 
-
 dotenv.config();
+
+
 
 // Import routes
 import userRoutes from "./routes/userRoute.js";
@@ -15,12 +16,9 @@ import jobRoutes from "./routes/job.routes.js";
 import applicationRoutes from "./routes/application.routes.js";
 
 const app = express();
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
 
 const corsOptions = {
     origin: "http://localhost:5173",
@@ -28,10 +26,14 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+
+
 // Test route
 app.get("/test", (req, res) => {
     res.send("Hello, this is a test page");
 });
+
+
 
 // API routes
 app.use("/api/v1/user", userRoutes);
@@ -45,6 +47,8 @@ app.get("/", (req, res) => {
         error: false
     })
 })
+
+
 
 // Start the server
 const PORT = 8000 || 3016;
