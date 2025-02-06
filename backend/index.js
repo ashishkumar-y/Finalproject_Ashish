@@ -31,16 +31,13 @@ app.use("/api/v1/company", companyRoutes);
 app.use("/api/v1/job", jobRoutes);
 app.use("/api/v1/application", applicationRoutes);
 
-app.get("/", (req, res) => {
-    res.send({
-        activeStatus: true,
-        error: false
-    })
-})
+app.get('/api/v1/test', (req, res) => {
+    res.json({ success: true });
+  });
 
 
 // Start the server
-const PORT = 8000 || 3016;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, async (err) => {
     if (err) {
         console.error("Server failed to start", err);
@@ -51,4 +48,7 @@ app.listen(PORT, async (err) => {
 });
 
 
-export default app;
+export default async (req, res) => {
+  await databaseConnection();
+  app(req, res);
+};
