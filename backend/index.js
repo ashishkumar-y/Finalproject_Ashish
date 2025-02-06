@@ -39,8 +39,11 @@ app.use("/api/v1/company", companyRoutes);
 app.use("/api/v1/job", jobRoutes);
 app.use("/api/v1/application", applicationRoutes);
 
-app.get("/", (req,res)=>{
-    res.send("hello this is Job khojo an site make your life easy ")
+app.get("/", (req, res) => {
+    res.send({
+        activeStatus: true,
+        error: false
+    })
 })
 
 // Start the server
