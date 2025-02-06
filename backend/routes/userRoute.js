@@ -16,7 +16,7 @@ const upload = multer({storage })
 const routes = express.Router()
 
 routes.use('/uploadsData', express.static('uploadsData'));
-routes.post('/signUp', upload.single('profilePhoto'), registerUser);
+routes.post('/signup', upload.single('profilePhoto'), registerUser);
 routes.post('/login', login);
 routes.get('/logout', logout);
 routes.post('/profile/update', verifyJwt, upload.single('resume'), updateProfile)
