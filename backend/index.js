@@ -39,6 +39,10 @@ app.use("/api/v1/company", companyRoutes);
 app.use("/api/v1/job", jobRoutes);
 app.use("/api/v1/application", applicationRoutes);
 
+app.get("/", (req,res)=>{
+    res.send("hello this is Job khojo an site make your life easy ")
+})
+
 // Start the server
 const PORT = 8000 || 3016;
 app.listen(PORT, async (err) => {
